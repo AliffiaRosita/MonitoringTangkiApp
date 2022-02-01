@@ -17,12 +17,12 @@ class SensorSeeder extends Seeder
     {
         $data=[
             [
-                'jenis' =>'air',
+                'jenis' =>'Air',
             ],
             [
-                'jenis' =>'minyak',
+                'jenis' =>'Minyak',
             ],
           ];
-        DB::pable('sensor')->insert($data);
+        DB::table('sensor')->insert($data);
     }
 }

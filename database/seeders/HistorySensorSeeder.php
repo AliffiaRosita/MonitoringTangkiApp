@@ -19,38 +19,38 @@ class HistorySensorSeeder extends Seeder
             [
                 'tinggi'=> 3,
                 'volume'=>235.62,
-                'id_tangki'=> 1,
-                'id_sensor'=>2
+                'tangki_id'=> 1,
+                'sensor_id'=>2
             ],
             [
                 'tinggi'=> 6,
                 'volume'=>471.24,
-                'id_tangki'=> 1,
-                'id_sensor'=>1
+                'tangki_id'=> 1,
+                'sensor_id'=>1
             ],
             [
                 'tinggi'=> 5,
                 'volume'=>392.7,
-                'id_tangki'=> 1,
-                'id_sensor'=>2
+                'tangki_id'=> 1,
+                'sensor_id'=>2
             ],
             [
                 'tinggi'=> 12,
                 'volume'=>942.48,
-                'id_tangki'=> 1,
-                'id_sensor'=>1
+                'tangki_id'=> 1,
+                'sensor_id'=>1
             ],
             [
                 'tinggi'=> 2,
                 'volume'=>157.08,
-                'id_tangki'=> 2,
-                'id_sensor'=>2
+                'tangki_id'=> 1,
+                'sensor_id'=>2
             ],
             [
                 'tinggi'=> 7,
                 'volume'=>549.78,
-                'id_tangki'=> 2,
-                'id_sensor'=>1
+                'tangki_id'=> 1,
+                'sensor_id'=>1
             ],
         ];
 

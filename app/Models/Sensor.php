@@ -9,7 +9,8 @@ class Sensor extends Model
 {
     use HasFactory;
     protected $table ='sensor';
-    protected $with=['historySensor'];
+    protected $guarded=['id'];
+    // protected $with=['historySensor'];
 
     public function historySensor()
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HistorySensor;
 use App\Models\Tangki;
 use Illuminate\Http\Request;
 
@@ -47,7 +48,7 @@ class TangkiController extends Controller
         ]);
         Tangki::create($validatedData);
 
-        return redirect('tangki.index')->with('success','Tangki berhasil ditambahkan');
+        return redirect('/tangki')->with('success','Tangki berhasil ditambahkan');
     }
 
     /**
@@ -58,8 +59,20 @@ class TangkiController extends Controller
      */
     public function show(Tangki $tangki)
     {
+       $data=[];
+       $tangkiAir = $tangki->historySensor()->where('sensor_id','1')->first();
+       $tangkiMinyak = $tangki->historySensor()->where('sensor_id','2')->first();
+       $nilaiKosong = $tangki->volume - ($tangkiAir->volume + $tangkiMinyak->volume);
+        // $sensor = $historySensor->sensor()->jenis;
+
+        $data['label'] = ['Kosong','Minyak','Air'];
+        $data['data'] = [$nilaiKosong,$tangkiMinyak->volume,$tangkiAir->volume];
+        $chart_data = json_encode($data);
+
         return view('tangki.show',[
-            'tangki'=>$tangki
+            'tangki'=> $tangki,
+            'chart_data'=> $chart_data,
+
         ]);
     }
 
@@ -93,7 +106,7 @@ class TangkiController extends Controller
         ]);
 
         Tangki::where('id',$tangki->id)->update($validatedData);
-            return redirect('tangki.index')->with('success','Tangki berhasil diubah');
+            return redirect('/tangki')->with('success','Tangki berhasil diubah');
     }
 
     /**
@@ -105,6 +118,8 @@ class TangkiController extends Controller
     public function destroy(Tangki $tangki)
     {
         Tangki::destroy($tangki->id);
-        return redirect('tangki.index')->with('success','Tangki berhasil dihapus');
+        return redirect('/tangki')->with('success','Tangki berhasil dihapus');
     }
+
+
 }

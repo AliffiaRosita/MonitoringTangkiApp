@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TangkiController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', [DashboardController::class,'index']);
 
 Route::resource('tangki', TangkiController::class);

@@ -17,8 +17,8 @@ class CreateHistorySensorTable extends Migration
             $table->id();
             $table->double('tinggi', 15, 8);
             $table->double('volume', 15, 8);
-            $table->foreignId('id_sensor')->constrained('sensor')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('id_tangki')->constrained('tangki')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('sensor_id')->constrained('sensor')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('tangki_id')->constrained('tangki')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
