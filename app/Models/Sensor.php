@@ -9,11 +9,8 @@ class Sensor extends Model
 {
     use HasFactory;
     protected $table ='sensor';
+    protected $with=['historySensor'];
 
-    public function tangki()
-    {
-        return $this->belongsTo(Tangki::class,'id_tangki');
-    }
     public function historySensor()
     {
         return $this->hasMany(HistorySensor::class);

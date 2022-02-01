@@ -15,9 +15,9 @@ class CreateSensorTable extends Migration
     {
         Schema::create('sensor', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('jenis');
-            $table->foreignId('id_tangki')->constrained('tangki')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreignId('id_tangki')->constrained('tangki')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

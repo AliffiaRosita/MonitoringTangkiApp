@@ -15,10 +15,11 @@ class CreateTangkiTable extends Migration
     {
         Schema::create('tangki', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->double('tinggi', 15, 2);
+            $table->double('volume', 15, 2);
+            $table->double('suhu', 15, 2);
             $table->timestamps();
-            $table->double('tinggi', 15, 8);
-            $table->double('volume', 15, 8);
-            $table->double('suhu', 15, 8);
         });
     }
 

@@ -9,6 +9,7 @@ class Tangki extends Model
 {
     use HasFactory;
     protected $table='tangki';
+    protected $guarded = 'id';
 
     public function sensor()
     {
