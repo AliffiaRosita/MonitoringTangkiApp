@@ -19,7 +19,6 @@ class CreateTangkiTable extends Migration
             $table->double('tinggi', 15, 8);
             $table->double('volume', 15, 8);
             $table->double('suhu', 15, 8);
-            $table->foreignId('id_sensor')->constrained('sensor')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
