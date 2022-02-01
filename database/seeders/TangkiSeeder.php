@@ -36,7 +36,7 @@ class TangkiSeeder extends Seeder
                 'nama'=>'Tangki D',
                 'tinggi'=> 1.5,
                 'volume'=>1.18,
-                'suhu'=> 18
+                'suhu'=> 36
             ],
 
             ];

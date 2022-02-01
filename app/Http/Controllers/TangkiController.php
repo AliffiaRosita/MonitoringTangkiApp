@@ -59,21 +59,22 @@ class TangkiController extends Controller
      */
     public function show(Tangki $tangki)
     {
-       $data=[];
-       $tangkiAir = $tangki->historySensor()->where('sensor_id','1')->first();
-       $tangkiMinyak = $tangki->historySensor()->where('sensor_id','2')->first();
-       $nilaiKosong = $tangki->volume - ($tangkiAir->volume + $tangkiMinyak->volume);
-        // $sensor = $historySensor->sensor()->jenis;
+            $data=[];
+            $tangkiAir = $tangki->historySensor()->where('sensor_id','1')->first();
+            $tangkiMinyak = $tangki->historySensor()->where('sensor_id','2')->first();
+            $nilaiKosong = $tangki->volume - ($tangkiAir->volume + $tangkiMinyak->volume);
+             // $sensor = $historySensor->sensor()->jenis;
 
-        $data['label'] = ['Kosong','Minyak','Air'];
-        $data['data'] = [$nilaiKosong,$tangkiMinyak->volume,$tangkiAir->volume];
-        $chart_data = json_encode($data);
+             $data['label'] = ['Kosong','Minyak','Air'];
+             $data['data'] = [$nilaiKosong,$tangkiMinyak->volume,$tangkiAir->volume];
+             $chart_data = json_encode($data);
 
-        return view('tangki.show',[
-            'tangki'=> $tangki,
-            'chart_data'=> $chart_data,
+             return view('tangki.show',[
+                 'tangki'=> $tangki,
+                 'chart_data'=> $chart_data,
 
-        ]);
+             ]);
+        
     }
 
     /**

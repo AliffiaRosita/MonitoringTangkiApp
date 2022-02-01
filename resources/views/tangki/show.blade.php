@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-5" >
-        <div class="card">
+        <div class="card" style="box-shadow: 3px -1px 31px 7px rgba(209,209,209,0.73);">
             <div class="card-body ">
                 <div >
                     <canvas id="myChart" ></canvas>
@@ -13,18 +13,18 @@
         </div>
     </div>
     <div class="col-7">
-            <div class="card">
+            <div class="card " style="box-shadow: 3px -1px 31px 7px rgba(209,209,209,0.73);">
                     <div class="card-body ">
                        <strong>Deskripsi Tangki</strong>
                         <ul>
                             <li>
-                                Suhu  : {{ $tangki->suhu }}
+                                Suhu  : {{ $tangki->suhu }} &deg;C
                             </li>
                             <li>
-                                Kapasitas Maksimum  : {{ $tangki->volume }}
+                                Kapasitas Maksimum  : {{ $tangki->volume }} m<sup>3</sup>
                             </li>
                             <li>
-                                Tinggi Tangki  : {{ $tangki->tinggi }}
+                                Tinggi Tangki  : {{ $tangki->tinggi }} m
                             </li>
                         </ul>
                     </div>
@@ -42,8 +42,8 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->sensor->jenis }}</td>
-                            <td>{{ $item->tinggi }}</td>
-                            <td>{{ $item->volume }}</td>
+                            <td>{{ $item->tinggi }} m</td>
+                            <td>{{ $item->volume }} m<sup>3</sup></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -79,7 +79,12 @@
         type: 'doughnut',
         data: data,
         options: {
-            height: 50
+        plugins:{
+            title: {
+        display: true,
+        text: 'Diagram Tangki Air dan Minyak'
+      }
+        }
         }
     };
     const myChart = new Chart(

@@ -1,5 +1,7 @@
 @extends('template.main')
 @section('content')
+<h3>Dashboard</h3>
+<br>
 <div class="card">
     <div class="card-body">
         <div >
@@ -8,7 +10,8 @@
     </div>
 </div>
 <div class="card mt-5">
-    <table class="table table-striped">
+    <h5 class="m-3">History</h5>
+    <table class="table table-striped ">
         <thead>
             <th>No</th>
             <th>Nama Tangki</th>
@@ -100,7 +103,7 @@ const config = {
       },
       title: {
         display: true,
-        text: 'Chart.js Bar Chart'
+        text: 'Diagram Tangki Air dan Minyak'
       }
     }
   },

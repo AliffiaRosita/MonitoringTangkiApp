@@ -1,7 +1,7 @@
 @extends('template.main')
 @section('content')
 <h3 class="d-inline">Data Tangki</h3>
-<a href="{{ route('tangki.create') }}" class="btn btn-primary float-end">Tambah Data</a>
+{{-- <a href="{{ route('tangki.create') }}" class="btn btn-primary float-end">Tambah Data</a> --}}
 <hr>
 @if (session()->has('success'))
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
